@@ -14,7 +14,6 @@ const removeDuplicates = nums => {
   let i = nums.length - 1;
   
   for (let j = nums.length - 2; j >= 0; j--) {
-    console.log(j);
     if (nums[j] == nums[i]) {
       nums.splice(i, 1);
     }
@@ -23,10 +22,6 @@ const removeDuplicates = nums => {
   return nums.length;
 };
 
-// removeDuplicates(input);
-// removeDuplicates(input2)
-// removeDuplicates(input3)
-
-console.log('answer', removeDuplicates(input)); // 5
-// console.log(removeDuplicates(input2)); // 2
-// console.log(removeDuplicates(input3)); // 0
+console.log(removeDuplicates(input)); // 5
+console.log(removeDuplicates(input2)); // 2
+console.log(removeDuplicates(input3)); // 0
