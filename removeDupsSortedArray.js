@@ -1,9 +1,12 @@
-// Given a sorted array nums,
-// 1. remove the duplicates in-place such that each element appear only once
-// 2. return the new length
+/* 
+Source: https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+Given a sorted array nums,
+1. remove the duplicates in-place such that each element appear only once
+2. return the new length
 
-// Some commentary... I peeked at the solution for this challenge and noticed that although the instructions ask to "remove the duplicates in-place", the solution didn't really do that. 
-// This code isn't as performant as I would like but it mutates the sorted array so that each element appears only once and returns the length of the array with no duplicate values
+Some commentary... I peeked at the solution for this challenge and noticed that although the instructions ask to "remove the duplicates in-place", the solution didn't really do that. 
+This code isn't as performant as I would like but it mutates the sorted array so that each element appears only once and returns the length of the array with no duplicate values
+*/
 
 let input = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
 let input2 = [1, 1, 2];
