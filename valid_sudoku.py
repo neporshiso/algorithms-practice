@@ -1,5 +1,5 @@
 '''
-Source: 
+Source: https://leetcode.com/problems/valid-sudoku/
 Problem: Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
 
     1. Each row must contain the digits 1-9 without repetition.
@@ -34,15 +34,15 @@ input_two = [
 
 # this one tests condition 3
 input_three = [
-    [".",".",".",".","5",".",".","1","."],
-    [".","4",".","3",".",".",".",".","."],
-    [".",".",".",".",".","3",".",".","1"],
-    ["8",".",".",".",".",".",".","2","."],
-    [".",".","2",".","7",".",".",".","."],
-    [".","1","5",".",".",".",".",".","."],
-    [".",".",".",".",".","2",".",".","."],
-    [".","2",".","9",".",".",".",".","."],
-    [".",".","4",".",".",".",".",".","."]
+    [".", ".", ".", ".", "5", ".", ".", "1", "."],
+    [".", "4", ".", "3", ".", ".", ".", ".", "."],
+    [".", ".", ".", ".", ".", "3", ".", ".", "1"],
+    ["8", ".", ".", ".", ".", ".", ".", "2", "."],
+    [".", ".", "2", ".", "7", ".", ".", ".", "."],
+    [".", "1", "5", ".", ".", ".", ".", ".", "."],
+    [".", ".", ".", ".", ".", "2", ".", ".", "."],
+    [".", "2", ".", "9", ".", ".", ".", ".", "."],
+    [".", ".", "4", ".", ".", ".", ".", ".", "."]
 ]
 
 
@@ -70,7 +70,15 @@ def isValidSudoku(board):
         if col_detection == True:
             return False
 
+    # need to pluck out the 3 x 3 grids and convert it to a list to feed it into duplicate_detection
+    for i in range(0, 9, 3):
+        for j in range(0, 9, 3):
+            box = board[i][j:j+3]+board[i+1][j:j+3]+board[i+2][j:j+3]
+            block_check = duplicate_detection(box)
+            if block_check == True:
+                return False
+
     return True
 
 
-print(isValidSudoku(input_two))
+print(isValidSudoku(input_three))
